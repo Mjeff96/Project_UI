@@ -23,6 +23,7 @@ public class CatalogActivity extends AppCompatActivity {
         dropdown = findViewById(R.id.spinner);
         dropdown.setAdapter(adapter);
 
+
         Button button = (Button) findViewById(R.id.button2);
 
         button.setOnClickListener( new View.OnClickListener()
@@ -39,13 +40,7 @@ public class CatalogActivity extends AppCompatActivity {
         String text = dropdown.getSelectedItem().toString();
         Intent intent;
 
-        if(text == "Arms"){
-            intent = new Intent(this, ArmsActivity.class);
-        }else if(text == "Legs"){
-            intent = new Intent(this, LegsActivity.class);
-        }else{
-            intent = new Intent(this, YogaActivity.class);
-        }
+        intent = new Intent(this, UsersCatalog.class);
 
         startActivity(intent);
     }

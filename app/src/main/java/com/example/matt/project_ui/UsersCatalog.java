@@ -3,13 +3,13 @@ package com.example.matt.project_ui;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class YogaActivity extends AppCompatActivity {
+public class UsersCatalog extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_yoga);
+        setContentView(R.layout.activity_users_catalog);
 
-        setTitle("Yoga Catalog");
+        setTitle("Your Catalog");
     }
 }
