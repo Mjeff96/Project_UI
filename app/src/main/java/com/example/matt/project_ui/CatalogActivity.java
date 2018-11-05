@@ -31,6 +31,8 @@ public class CatalogActivity extends AppCompatActivity {
                 next_page(v);
             }
         });
+
+        setTitle("Catalogs");
     }
 
     public void next_page(View v) {

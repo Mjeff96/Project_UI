@@ -6,11 +6,4 @@
     android:layout_height="match_parent"
     tools:context=".YogaActivity">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Yoga"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="215dp" />
 </android.support.constraint.ConstraintLayout>

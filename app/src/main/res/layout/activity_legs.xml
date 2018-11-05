@@ -6,11 +6,4 @@
     android:layout_height="match_parent"
     tools:context=".LegsActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Legs"
-        tools:layout_editor_absoluteX="192dp"
-        tools:layout_editor_absoluteY="215dp" />
 </android.support.constraint.ConstraintLayout>

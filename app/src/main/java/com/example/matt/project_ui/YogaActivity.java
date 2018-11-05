@@ -9,5 +9,7 @@ public class YogaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yoga);
+
+        setTitle("Yoga Catalog");
     }
 }

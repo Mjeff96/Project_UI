@@ -9,5 +9,7 @@ public class LegsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_legs);
+
+        setTitle("Legs Catalog");
     }
 }

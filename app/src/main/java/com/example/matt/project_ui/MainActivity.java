@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
                 next_page(v);
             }
         });
+
+        setTitle("Workout App");
     }
 
     public void next_page(View v) {
