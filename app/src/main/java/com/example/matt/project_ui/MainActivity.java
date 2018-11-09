@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
 
+import java.io.File;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,15 +23,29 @@ public class MainActivity extends AppCompatActivity {
         CatalogButton.setOnClickListener( new View.OnClickListener()
         {
             public void onClick (View v){
-                next_page(v);
+                next_page_catalog(v);
+            }
+        });
+
+        Button AccountButton = (Button) findViewById(R.id.AccountButton);
+
+        AccountButton.setOnClickListener( new View.OnClickListener()
+        {
+            public void onClick (View v){
+                next_page_myaccount(v);
             }
         });
 
         setTitle("Workout App");
     }
 
-    public void next_page(View v) {
+    public void next_page_catalog(View v) {
         Intent intent = new Intent(this, CatalogActivity.class);
+        startActivity(intent);
+    }
+
+    public void next_page_myaccount(View v) {
+        Intent intent = new Intent(this, AccountActivity.class);
         startActivity(intent);
     }
 }
