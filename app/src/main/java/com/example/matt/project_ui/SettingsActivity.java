@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class AccountActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account);
+        setContentView(R.layout.activity_settings);
 
         //Home Button
         Button homeButton = (Button) findViewById(R.id.homeButton);
@@ -23,16 +23,17 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
 
-        //Settings Button
-        Button settingsButton = (Button) findViewById(R.id.settingsButton);
-        settingsButton.setOnClickListener( new View.OnClickListener()
+        //My Account Button
+        Button accountButton = (Button) findViewById(R.id.accountButton);
+        accountButton.setOnClickListener( new View.OnClickListener()
         {
             public void onClick (View v){
-                next_page_settings(v);
+                next_page_myaccount(v);
             }
         });
 
         setTitle("My Account");
+
     }
 
     public void next_page_home(View v) {
@@ -40,8 +41,8 @@ public class AccountActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void next_page_settings(View v) {
-        Intent intent = new Intent(this, SettingsActivity.class);
+    public void next_page_myaccount(View v) {
+        Intent intent = new Intent(this, AccountActivity.class);
         startActivity(intent);
     }
 }

@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Catalog Button
         Button CatalogButton = (Button) findViewById(R.id.CatalogButton);
-
         CatalogButton.setOnClickListener( new View.OnClickListener()
         {
             public void onClick (View v){
@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Account Button
         Button AccountButton = (Button) findViewById(R.id.AccountButton);
-
         AccountButton.setOnClickListener( new View.OnClickListener()
         {
             public void onClick (View v){
@@ -36,9 +36,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //Settings Button
+        Button settingsButton = (Button) findViewById(R.id.SettingsButton);
+        settingsButton.setOnClickListener( new View.OnClickListener()
+        {
+            public void onClick (View v){
+                next_page_settings(v);
+            }
+        });
+
         setTitle("Workout App");
     }
 
+    // Navigation Bar Button Definitions
+    //////////////////////////////////////////////////////////////////////////////
     public void next_page_catalog(View v) {
         Intent intent = new Intent(this, CatalogActivity.class);
         startActivity(intent);
@@ -48,4 +60,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AccountActivity.class);
         startActivity(intent);
     }
+
+    public void next_page_settings(View v) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+    //////////////////////////////////////////////////////////////////////////////////
 }
