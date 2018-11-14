@@ -17,7 +17,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     private static final String DATABASE_NAME = "WorkoutInfo";
-    private static final String TABLE_WORKOUT_DETAILS = "WorkoutDetails";
+    private static final String TABLE_WORKOUT_DETAILS = "WorkoutData";
     private static final String KEY_ID = "id";
     private static final String KEY_CATAGORY = "category";
     private static final String KEY_NAME = "name";
@@ -31,12 +31,13 @@ public class DatabaseManager extends SQLiteOpenHelper {
     public DatabaseManager(Context context) {super(context, DATABASE_NAME, null, DATABASE_VERSION);
         assetManager = context.getAssets();
         mydatabase = getWritableDatabase();
+        onUpgrade(mydatabase, 1 ,2 );
     }
 
     @Override
     public void onCreate(SQLiteDatabase db){
         String CREATE_WORKOUT_DETAIL_TABLE = "CREATE TABLE " + TABLE_WORKOUT_DETAILS + "("
-                + KEY_ID + "TEXT,"
+                + KEY_ID + " TEXT,"
                 + KEY_CATAGORY + " TEXT,"
                 + KEY_NAME + " TEXT, "
                 + KEY_MG + " TEXT, "
