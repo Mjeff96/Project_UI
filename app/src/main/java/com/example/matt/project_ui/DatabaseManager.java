@@ -6,8 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -20,6 +18,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "WorkoutInfo";
     private static final String TABLE_WORKOUT_DETAILS = "WorkoutDetails";
+    private static final String KEY_ID = "id";
     private static final String KEY_CATAGORY = "category";
     private static final String KEY_NAME = "name";
     private static final String KEY_MG = "musclegroup";
@@ -37,6 +36,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db){
         String CREATE_WORKOUT_DETAIL_TABLE = "CREATE TABLE " + TABLE_WORKOUT_DETAILS + "("
+                + KEY_ID + "TEXT,"
                 + KEY_CATAGORY + " TEXT,"
                 + KEY_NAME + " TEXT, "
                 + KEY_MG + " TEXT, "
@@ -46,9 +46,13 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_WORKOUT_DETAIL_TABLE);
         db.execSQL("SELECT * FROM WorkoutDetails");
-        String filename = "Workouts.csv";
+        String arms_file = "ArmsData.csv";
+        String legs_file = "LegsData.csv";
+        String yoga_file = "YogaData.csv";
         try {
-            populateData(db, filename);
+            populateData(db, arms_file);
+            populateData(db, legs_file);
+            populateData(db, yoga_file);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -67,7 +71,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
         BufferedReader buffer = new BufferedReader(new InputStreamReader(input));
         String line = "";
         String tableName = TABLE_WORKOUT_DETAILS;
-        String columns = KEY_CATAGORY + "," + KEY_NAME + "," + KEY_MG + ","
+        String columns = KEY_ID + "," + KEY_CATAGORY + "," + KEY_NAME + "," + KEY_MG + ","
                + KEY_DIFFICULTY + "," + KEY_PROS + "," + KEY_CONS;
         String str1 = "INSERT INTO " + tableName + " (" + columns + ") values(";
         String str2 = ");";
@@ -81,7 +85,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
             sb.append(str[2] + "','");
             sb.append(str[3] + "','");
             sb.append(str[4] + "','");
-            sb.append(str[5] + "'");
+            sb.append(str[5] + "','");
+            sb.append(str[6] + "'");
             sb.append(str2);
             db.execSQL(sb.toString());
         }
