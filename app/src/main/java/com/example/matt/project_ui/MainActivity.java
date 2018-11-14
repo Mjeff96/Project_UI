@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
 
+import java.io.File;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,20 +18,52 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button = (Button) findViewById(R.id.button);
-
-        button.setOnClickListener( new View.OnClickListener()
+        //Catalog Button
+        Button CatalogButton = (Button) findViewById(R.id.CatalogButton);
+        CatalogButton.setOnClickListener( new View.OnClickListener()
         {
             public void onClick (View v){
-                next_page(v);
+                next_page_catalog(v);
+            }
+        });
+
+        //Account Button
+        Button AccountButton = (Button) findViewById(R.id.AccountButton);
+        AccountButton.setOnClickListener( new View.OnClickListener()
+        {
+            public void onClick (View v){
+                next_page_myaccount(v);
+            }
+        });
+
+
+        //Settings Button
+        Button settingsButton = (Button) findViewById(R.id.SettingsButton);
+        settingsButton.setOnClickListener( new View.OnClickListener()
+        {
+            public void onClick (View v){
+                next_page_settings(v);
             }
         });
 
         setTitle("Workout App");
     }
 
-    public void next_page(View v) {
+    // Navigation Bar Button Definitions
+    //////////////////////////////////////////////////////////////////////////////
+    public void next_page_catalog(View v) {
         Intent intent = new Intent(this, CatalogActivity.class);
         startActivity(intent);
     }
+
+    public void next_page_myaccount(View v) {
+        Intent intent = new Intent(this, AccountActivity.class);
+        startActivity(intent);
+    }
+
+    public void next_page_settings(View v) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+    //////////////////////////////////////////////////////////////////////////////////
 }
