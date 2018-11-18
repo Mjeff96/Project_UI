@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void next_page_myaccount(View v) {
-        Intent intent = new Intent(this, AccountActivity.class);
+    public void next_page_myaccount(View v) { //Should be Account Activity
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 
