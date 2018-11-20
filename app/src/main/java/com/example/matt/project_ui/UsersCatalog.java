@@ -14,6 +14,7 @@ public class UsersCatalog extends AppCompatActivity {
 
         DatabaseManager db = new DatabaseManager(getApplicationContext());
 
+        db.getColumnData("name", "Arms");
         setTitle("Your Catalog");
     }
 }
