@@ -48,7 +48,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 + KEY_CONS + " TEXT" + ")";
 
         db.execSQL(CREATE_WORKOUT_DETAIL_TABLE);
-        db.execSQL("SELECT * FROM WorkoutDetails");
         String arms_file = "ArmsData.csv";
         String legs_file = "LegsData.csv";
         String yoga_file = "YogaData.csv";
@@ -100,7 +99,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     //IDS = Arms, Yoga, Legs
     public ArrayList<String> getColumnData(String column_name, String id) {
         ArrayList<String> values = new ArrayList<String>();
-        String querry = "SELECT " + column_name + " FROM " + TABLE_WORKOUT_DETAILS + " WHERE id = " + id + ";";
+        String querry = "SELECT " + column_name + " FROM " + TABLE_WORKOUT_DETAILS + " WHERE id = '" + id + "';";
         Cursor cursor = mydatabase.rawQuery(querry, null);
 
         if(cursor.moveToFirst()) {
