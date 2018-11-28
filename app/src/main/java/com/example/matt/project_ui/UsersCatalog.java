@@ -31,7 +31,7 @@ public class UsersCatalog extends AppCompatActivity {
 
         setTitle("Your Catalog");
 
-        catalog_items = (ArrayList)DataSource.createListItems();
+        catalog_items = (ArrayList)DataSource.createListItems(db);
         catalog_adapter = new CatalogItemAdapter(catalog_items);
 
         catalog_view = (RecyclerView)findViewById(R.id.recycler_view);

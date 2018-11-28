@@ -5,15 +5,15 @@ import java.util.List;
 
 public class DataSource {
 
-    public static final String[] textItems = {"Temp1", "Temp2", "Temp3"};
 
-    public static List<CatalogItem> createListItems(){
+    public static List<CatalogItem> createListItems(DatabaseManager db){
         List<CatalogItem> items = new ArrayList<>();
+        ArrayList<String> textItems = db.getColumnData("category", "Arms");
 
-        for(int i=0;i<textItems.length; i++){
+        for(int i=0;i<textItems.size(); i++){
             CatalogItem catalogItem = new CatalogItem();
 
-            catalogItem.setTextitem(textItems[i]);
+            catalogItem.setTextitem(textItems.get(i));
 
             items.add(catalogItem);
         }
