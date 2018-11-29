@@ -19,38 +19,35 @@
 
         <TextView
             android:id="@+id/pros_box"
-            android:textColor="#111"
             android:layout_width="160dp"
             android:layout_height="50dp"
+            android:layout_marginLeft="200dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="45dp"
-            android:layout_marginLeft="200dp"
-            android:text="placeholder">
-        </TextView>
+            android:text="placeholder"
+            android:textColor="#111"></TextView>
 
         <TextView
             android:id="@+id/negs_box"
-            android:textColor="#111"
             android:layout_width="160dp"
             android:layout_height="50dp"
+            android:layout_marginLeft="200dp"
             android:layout_marginTop="90dp"
             android:layout_marginBottom="45dp"
-            android:layout_marginLeft="200dp"
-            android:text="placeholder">
-        </TextView>
+            android:text="placeholder"
+            android:textColor="#111"></TextView>
 
         <TextView
             android:id="@+id/workout_title_box"
-            android:textColor="#111"
-            android:textSize="16dp"
-            android:textAllCaps="true"
             android:layout_width="130dp"
             android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="45dp"
-            android:layout_marginLeft="20dp"
-            android:text="placeholder">
-        </TextView>
+            android:text="placeholder"
+            android:textAllCaps="true"
+            android:textColor="#111"
+            android:textSize="16dp"></TextView>
 
 
         <ImageView

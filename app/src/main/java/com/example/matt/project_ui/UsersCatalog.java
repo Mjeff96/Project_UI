@@ -1,5 +1,6 @@
 package com.example.matt.project_ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.database.sqlite.SQLiteDatabase;
@@ -7,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.GridLayout;
 import android.widget.ListView;
@@ -38,8 +41,24 @@ public class UsersCatalog extends AppCompatActivity {
         catalog_view.setLayoutManager(new LinearLayoutManager(this));
         catalog_view.setItemAnimator(new DefaultItemAnimator());
         catalog_view.setAdapter(catalog_adapter);
+
+
     }
 
+    public void next_page_home(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void next_page_myaccount(View v) {
+        Intent intent = new Intent(this, AccountActivity.class);
+        startActivity(intent);
+    }
+
+    public void next_page_settings(View v) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
 
 
 }

@@ -30,8 +30,14 @@ public class CatalogActivity extends AppCompatActivity {
         ArrayList<CheckBox> checkboxes = new ArrayList<CheckBox>();
 
         ArrayList<String> option_list =new ArrayList<String>();
+        option_list.add("Abs");
         option_list.add("Arms");
+        option_list.add("Back");
+        option_list.add("Calisthenics");
+        option_list.add("Cardio");
+        option_list.add("Calves");
         option_list.add("Legs");
+        option_list.add("Pilottes");
         option_list.add("Yoga");
 
         checkboxes = setup_table(option_list);
