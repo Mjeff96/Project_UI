@@ -30,7 +30,10 @@ public class CatalogItemAdapter extends RecyclerView.Adapter<CatalogItemAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CatalogItem catalogItem = CatalogItemList.get(position);
 
-        holder.textView.setText(catalogItem.getTextitem());
+        holder.proView.setText(catalogItem.getProsItem());
+        holder.conView.setText(catalogItem.getConsItem());
+        holder.workoutView.setText(catalogItem.getWorkoutInfo());
+        holder.workoutTitle.setText(catalogItem.getWorkoutTitle());
     }
 
     @Override
@@ -39,12 +42,17 @@ public class CatalogItemAdapter extends RecyclerView.Adapter<CatalogItemAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView textView;
+        TextView proView;
+        TextView conView;
+        TextView workoutView;
+        TextView workoutTitle;
 
         public ViewHolder(View itemView){
             super(itemView);
-            textView = (TextView)itemView.findViewById(R.id.text_box);
-
+            proView = (TextView)itemView.findViewById(R.id.pros_box);
+            conView = (TextView)itemView.findViewById(R.id.negs_box);
+            workoutView = (TextView)itemView.findViewById(R.id.workout_info_box);
+            workoutTitle = (TextView)itemView.findViewById(R.id.workout_title_box);
         }
     }
 }

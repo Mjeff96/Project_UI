@@ -38,8 +38,6 @@ public class UsersCatalog extends AppCompatActivity {
         catalog_view.setLayoutManager(new LinearLayoutManager(this));
         catalog_view.setItemAnimator(new DefaultItemAnimator());
         catalog_view.setAdapter(catalog_adapter);
-
-
     }
 
 

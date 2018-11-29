@@ -8,12 +8,18 @@ public class DataSource {
 
     public static List<CatalogItem> createListItems(DatabaseManager db){
         List<CatalogItem> items = new ArrayList<>();
-        ArrayList<String> textItems = db.getColumnData("category", "Arms");
+        ArrayList<String> proItems = db.getColumnData("pros", "Arms");
+        ArrayList<String> conItems = db.getColumnData("cons", "Arms");
+        ArrayList<String> workoutItems = db.getColumnData("musclegroup", "Arms");
+        ArrayList<String> workoutTitles = db.getColumnData("name", "Arms");
 
-        for(int i=0;i<textItems.size(); i++){
+        for(int i=0;i<proItems.size(); i++){
             CatalogItem catalogItem = new CatalogItem();
 
-            catalogItem.setTextitem(textItems.get(i));
+            catalogItem.setProsItem(proItems.get(i));
+            catalogItem.setConsItem(conItems.get(i));
+            catalogItem.setWorkoutInfo(workoutItems.get(i));
+            catalogItem.setWorkoutTitle(workoutTitles.get(i));
 
             items.add(catalogItem);
         }

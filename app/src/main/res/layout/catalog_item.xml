@@ -5,24 +5,91 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="210dp"
         >
-        
-    <android.support.v7.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="80dp"
-            android:layout_height="45dp"
-            android:layout_margin="20dp"
-            android:layout_gravity="center"
-            android:id="@+id/text_box"
-            android:text="placeholder">
+            android:id="@+id/background_box"
+            android:layout_width="364dp"
+            android:layout_height="190dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="45dp"
+            android:background="#c0c0c0"></TextView>
 
+        <TextView
+            android:id="@+id/pros_box"
+            android:textColor="#111"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="45dp"
+            android:layout_marginLeft="200dp"
+            android:text="placeholder">
         </TextView>
-    </android.support.v7.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/negs_box"
+            android:textColor="#111"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="45dp"
+            android:layout_marginLeft="200dp"
+            android:text="placeholder">
+        </TextView>
+
+        <TextView
+            android:id="@+id/workout_title_box"
+            android:textColor="#111"
+            android:textSize="16dp"
+            android:textAllCaps="true"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="45dp"
+            android:layout_marginLeft="20dp"
+            android:text="placeholder">
+        </TextView>
+
+
+        
+        <ImageView
+            android:id="@+id/pro_img"
+            android:src="@drawable/plussign"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="45dp"
+            android:layout_marginLeft="155dp"
+            />
+
+        <ImageView
+            android:id="@+id/con_img"
+            android:src="@drawable/minussign"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="95dp"
+            android:layout_marginBottom="45dp"
+            android:layout_marginLeft="155dp"
+            >
+        </ImageView>
+
+
+
+        <TextView
+            android:id="@+id/workout_info_box"
+            android:textColor="#111"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="45dp"
+            android:layout_marginLeft="20dp"
+            android:text="placeholder">
+        </TextView>
+
+
+
 
     </android.support.v7.widget.CardView>
 
