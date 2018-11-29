@@ -72,17 +72,15 @@
             android:src="@drawable/minussign"></ImageView>
 
 
-
         <TextView
             android:id="@+id/workout_info_box"
-            android:textColor="#111"
-            android:layout_width="match_parent"
+            android:layout_width="362dp"
             android:layout_height="55dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="150dp"
             android:layout_marginBottom="45dp"
-            android:layout_marginLeft="20dp"
-            android:text="placeholder">
-        </TextView>
+            android:text="placeholder"
+            android:textColor="#111"></TextView>
 
         <ImageButton
             android:layout_width="130dp"
