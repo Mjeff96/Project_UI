@@ -53,27 +53,23 @@
         </TextView>
 
 
-        
         <ImageView
             android:id="@+id/pro_img"
-            android:src="@drawable/plussign"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_marginLeft="155dp"
             android:layout_marginTop="35dp"
             android:layout_marginBottom="45dp"
-            android:layout_marginLeft="155dp"
-            />
+            android:src="@drawable/plussign" />
 
         <ImageView
             android:id="@+id/con_img"
-            android:src="@drawable/minussign"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_marginLeft="155dp"
             android:layout_marginTop="95dp"
             android:layout_marginBottom="45dp"
-            android:layout_marginLeft="155dp"
-            >
-        </ImageView>
+            android:src="@drawable/minussign"></ImageView>
 
 
 
@@ -88,7 +84,12 @@
             android:text="placeholder">
         </TextView>
 
-
+        <ImageButton
+            android:layout_width="130dp"
+            android:layout_height="115dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="45dp" />
 
 
     </android.support.v7.widget.CardView>
