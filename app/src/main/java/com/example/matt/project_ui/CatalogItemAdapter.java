@@ -34,6 +34,7 @@ public class CatalogItemAdapter extends RecyclerView.Adapter<CatalogItemAdapter.
         holder.conView.setText(catalogItem.getConsItem());
         holder.workoutView.setText(catalogItem.getWorkoutInfo());
         holder.workoutTitle.setText(catalogItem.getWorkoutTitle());
+        holder.thumbnail.setImageResource(catalogItem.getImageID());
     }
 
     @Override
@@ -46,6 +47,7 @@ public class CatalogItemAdapter extends RecyclerView.Adapter<CatalogItemAdapter.
         TextView conView;
         TextView workoutView;
         TextView workoutTitle;
+        ImageView thumbnail;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -53,6 +55,7 @@ public class CatalogItemAdapter extends RecyclerView.Adapter<CatalogItemAdapter.
             conView = (TextView)itemView.findViewById(R.id.negs_box);
             workoutView = (TextView)itemView.findViewById(R.id.workout_info_box);
             workoutTitle = (TextView)itemView.findViewById(R.id.workout_title_box);
+            thumbnail = (ImageView) itemView.findViewById(R.id.thumbnail_img);
         }
     }
 }

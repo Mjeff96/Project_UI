@@ -5,6 +5,15 @@ public class CatalogItem {
     private String ConsItem;
     private String workoutInfo;
     private String workoutTitle;
+    private int imageID;
+
+    public int getImageID() {
+        return imageID;
+    }
+
+    public void setImageID(int imageID) {
+        this.imageID = imageID;
+    }
 
     public String getWorkoutTitle() {
         return workoutTitle;

@@ -27,6 +27,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     private static final String KEY_DIFFICULTY = "difficulty";
     private static final String KEY_PROS = "pros";
     private static final String KEY_CONS = "cons";
+    private static final String KEY_DESCRIPTION = "description";
 
     AssetManager assetManager;
 
@@ -45,7 +46,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 + KEY_MG + " TEXT, "
                 + KEY_DIFFICULTY + " TEXT, "
                 + KEY_PROS + " TEXT, "
-                + KEY_CONS + " TEXT" + ")";
+                + KEY_CONS + " TEXT, "
+                + KEY_DESCRIPTION + " TEXT" + ")";
 
         db.execSQL(CREATE_WORKOUT_DETAIL_TABLE);
         String arms_file = "ArmsData.csv";
@@ -53,8 +55,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
         String yoga_file = "YogaData.csv";
         try {
             populateData(db, arms_file);
-            populateData(db, legs_file);
-            populateData(db, yoga_file);
+          //  populateData(db, legs_file);
+            //populateData(db, yoga_file);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -74,7 +76,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
         String line = "";
         String tableName = TABLE_WORKOUT_DETAILS;
         String columns = KEY_ID + "," + KEY_CATAGORY + "," + KEY_NAME + "," + KEY_MG + ","
-               + KEY_DIFFICULTY + "," + KEY_PROS + "," + KEY_CONS;
+               + KEY_DIFFICULTY + "," + KEY_PROS + "," + KEY_CONS + "," + KEY_DESCRIPTION;
         String str1 = "INSERT INTO " + tableName + " (" + columns + ") values(";
         String str2 = ");";
 
@@ -88,7 +90,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
             sb.append(str[3] + "','");
             sb.append(str[4] + "','");
             sb.append(str[5] + "','");
-            sb.append(str[6] + "'");
+            sb.append(str[6] + "','");
+            sb.append(str[7] + "'");
             sb.append(str2);
             db.execSQL(sb.toString());
         }
