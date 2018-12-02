@@ -30,7 +30,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Fitness Catalog"
+            android:text="Your Fitness Catalog"
             android:textColor="@android:color/darker_gray"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -154,7 +154,7 @@
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="70dp"
             android:layout_marginBottom="45dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

@@ -30,7 +30,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Fitness Catalog"
+            android:text="Select Filters for Catalog"
             android:textColor="@android:color/darker_gray"
             android:textSize="25dp"
             android:textStyle="bold" />
