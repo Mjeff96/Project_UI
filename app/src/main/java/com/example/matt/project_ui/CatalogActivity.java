@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -19,6 +22,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class CatalogActivity extends AppCompatActivity {
+    RecyclerView catalog_view;
+    CatalogOptionAdapter catalog_adapter;
+    ArrayList<CatalogOption> catalog_options = new ArrayList<CatalogOption>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +33,14 @@ public class CatalogActivity extends AppCompatActivity {
 
         Button button = (Button) findViewById(R.id.button2);
 
-        ArrayList<CheckBox> checkboxes = new ArrayList<CheckBox>();
+        button.setOnClickListener( new View.OnClickListener()
+        {
+            public void onClick (View v){
+                next_page(v);
+            }
+        });
+
+        setTitle("Catalogs");
 
         ArrayList<String> option_list =new ArrayList<String>();
         option_list.add("Abs");
@@ -40,60 +53,27 @@ public class CatalogActivity extends AppCompatActivity {
         option_list.add("Pilottes");
         option_list.add("Yoga");
 
-        checkboxes = setup_table(option_list);
+        for(int i=0;i<option_list.size(); i++){
+            CatalogOption co = new CatalogOption();
 
-        final ArrayList<CheckBox> checked_boxes = checkboxes;
-        final ArrayList<String> optionnames = option_list;
+            co.setOptionText(option_list.get(i));
+            catalog_options.add(co);
+        }
 
-        button.setOnClickListener( new View.OnClickListener()
-        {
-            public void onClick (View v){
-                next_page(v, checked_boxes, optionnames);
-            }
-        });
+        catalog_adapter = new CatalogOptionAdapter(catalog_options);
 
-        setTitle("Catalogs");
+        catalog_view = (RecyclerView)findViewById(R.id.recycler_view_options);
+        catalog_view.setLayoutManager(new LinearLayoutManager(this));
+        catalog_view.setItemAnimator(new DefaultItemAnimator());
+        catalog_view.setAdapter(catalog_adapter);
     }
 
-    public void next_page(View v, ArrayList<CheckBox> boxes, ArrayList<String> catalogoptions) {
+    public void next_page(View v) {
         Intent intent;
-
-        populate_catalog(boxes, catalogoptions);
 
         intent = new Intent(this, UsersCatalog.class);
 
         startActivity(intent);
     }
 
-
-    public ArrayList<CheckBox> setup_table(ArrayList<String> data){
-        ArrayList<CheckBox> checkboxes = new ArrayList<CheckBox>();
-
-        for(int i = 0; i < data.size(); i++){
-            TableLayout tl=(TableLayout)findViewById(R.id.catalog_options);
-            TableRow tr1 = new TableRow(this);
-            tr1.setLayoutParams(new TableRow.LayoutParams( TableRow.LayoutParams.FILL_PARENT,TableRow.LayoutParams.WRAP_CONTENT));
-            CheckBox Box= new CheckBox(this);
-            checkboxes.add(Box);
-            tr1.addView(Box);
-            TextView textview = new TextView(this);
-            textview.setText(data.get(i));
-            tr1.addView(textview);
-            textview.setTextColor(Color.BLACK);
-            textview.setTextSize(30);
-            tl.addView(tr1, new TableLayout.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
-        }
-
-        return checkboxes;
-    }
-
-    public void populate_catalog(ArrayList<CheckBox> checkboxes, ArrayList<String> catalogoptions){
-
-        for(int i = 0; i < checkboxes.size(); i++){
-            if(checkboxes.get(i).isChecked()){
-                
-            }
-        }
-
-    }
 }
