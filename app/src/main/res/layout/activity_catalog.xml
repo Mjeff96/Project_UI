@@ -7,25 +7,30 @@
     tools:context=".CatalogActivity">
 
     <LinearLayout
-        android:layout_width="278dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="410dp"
         android:layout_height="48dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/titlebox"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.083"
-        tools:layout_editor_absoluteX="0dp"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintVertical_bias="0.04000002">
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="389dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Catalog"
+            android:text="Fitness Catalog"
             android:textColor="@android:color/darker_gray"
             android:textSize="25dp"
             android:textStyle="bold" />
